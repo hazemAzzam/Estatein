@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`flex flex-col gap-10 relative ${urbanist.variable} antialiased bg-gray-08 min-h-screen`}
+        className={`relative ${urbanist.variable} bg-gray-08 antialiased min-h-screen`}
       >
         <Navbar />
         {children}

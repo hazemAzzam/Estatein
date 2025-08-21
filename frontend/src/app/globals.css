@@ -19,6 +19,15 @@
   --color-gray-40: #666666;
   --color-gray-50: #808080;
   --color-gray-60: #999999;
+
+  --color-purple-60: #6937e8;
+  --color-purple-65: #1a64ff;
+  --color-purple-70: #ff9533;
+  --color-purple-75: #ffca99;
+  --color-purple-90: #ffe4cc;
+  --color-purple-95: #fff1e5;
+  --color-purple-97: #fff7f0;
+  --color-purple-99: #fffcfa;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,4 +41,17 @@ body {
   /* background: black; */
   color: var(--foreground);
   font-family: Urbanist;
+}
+
+.link {
+  padding: 15px 20px;
+  background: var(--color-gray-08);
+  border: 1px solid var(--color-gray-30);
+  border-radius: 10px;
+}
+
+.link-fill {
+  padding: 15px 20px;
+  background: var(--color-purple-60);
+  border-radius: 10px;
 }
