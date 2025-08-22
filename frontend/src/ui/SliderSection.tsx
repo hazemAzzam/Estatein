@@ -22,7 +22,7 @@ export default function SliderSection({
       <div className="relative w-full max-w-[1400px] h-full bg-gray-08">
         <div className="w-full h-full flex flex-col items-start justify-center">
           <Image src="/assets/stars.svg" alt="" width={100} height={50} />
-          <div className="px-5 w-full flex flex-col gap-15">
+          <div className="px-5 w-full flex flex-col gap-10">
             <div className="flex flex-row flex-wrap gap-5 w-full justify-between py-5">
               <div className="flex flex-col gap-5 max-w-[1000px] ">
                 <h2 className="text-5xl">{title}</h2>
