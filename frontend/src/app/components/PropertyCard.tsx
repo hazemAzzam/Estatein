@@ -2,12 +2,6 @@ import { BathIcon, BedDouble } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import {
-  MdBedroomParent,
-  MdOutlineBedroomParent,
-  MdOutlineVilla,
-  MdVilla,
-} from "react-icons/md";
 import { PropertyType } from "../types/PropertyTypes";
 import { Text } from "@/ui/Text";
 
@@ -48,15 +42,6 @@ export default function PropertyCard({
                 </div>
               );
             })}
-            {/* <div className="bg-gray-15 rounded-full px-3 py-1 flex items-center gap-1">
-              <BedDouble size={19} /> <span>4-Bedroom</span>
-            </div>
-            <div className="bg-gray-15 rounded-full px-3 py-1 flex items-center gap-1">
-              <BathIcon size={19} /> <span>3-Bathroom</span>
-            </div>
-            <div className="bg-gray-15 rounded-full px-3 py-1 flex items-center gap-1">
-              <MdOutlineVilla size={19} /> <span>Villa</span>
-            </div> */}
           </div>
           <div className="flex flex-wrap gap-1 items-center justify-between w-full flex-row">
             <div className="flex flex-col w-fit">
