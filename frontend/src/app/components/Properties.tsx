@@ -1,9 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import PropertyCard from "./PropertyCard";
 import { PropertyType } from "../types/PropertyTypes";
-import { PropertySlider } from "./PropertySlider";
+import SliderSection from "@/ui/SliderSection";
 
 const PROPERTIES: PropertyType[] = [
   {
@@ -55,33 +53,18 @@ const PROPERTIES: PropertyType[] = [
 
 export default function Properties() {
   return (
-    <div className="w-full h-fit  flex items-center justify-center px-10 py-10">
-      <div className="relative w-full max-w-[1400px] h-full bg-gray-08">
-        <div className="w-full h-full flex flex-col items-start justify-center">
-          <Image src="/assets/stars.svg" alt="" width={100} height={50} />
-          <div className="px-5 w-full">
-            <div className="flex flex-row flex-wrap gap-5 w-full justify-between py-5">
-              <div className="flex flex-col gap-5 max-w-[1000px] ">
-                <h2 className="text-5xl">Featured Properties</h2>
-                <p className="text-gray-60">
-                  Explore our handpicked selection of featured properties. Each
+    <>
+      <SliderSection
+        title={"Featured Properties"}
+        description={`Explore our handpicked selection of featured properties. Each
                   listing offers a glimpse into exceptional homes and
                   investments available through Estatein. Click "View Details"
-                  for more information.
-                </p>
-              </div>
-              <div className="flex items-end">
-                <Link href="" className="link text-nowrap">
-                  View All Properties
-                </Link>
-              </div>
-            </div>
-            <div className="flex flex-row gap-3 justify-between w-full h-fit bg-gray-08 overflow-x-auto overflow-y-hidden">
-              <PropertySlider properties={PROPERTIES} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                  for more information.`}
+        action_name={"View All Properties"}
+        sliderItems={PROPERTIES.map((item, i) => (
+          <PropertyCard property={item} key={i} />
+        ))}
+      />
+    </>
   );
 }
