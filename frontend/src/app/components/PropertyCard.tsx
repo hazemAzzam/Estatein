@@ -16,7 +16,7 @@ export default function PropertyCard({
 }: PropertyCardProps) {
   return (
     <div
-      className={`h-full w-full border max-w-[385px] border-gray-20 rounded-md p-5 ${className}`}
+      className={`h-[500px]  border w-[385px] border-gray-20 rounded-md p-5 ${className}`}
     >
       <div className="flex flex-col gap-5 w-full h-full">
         <div className="relative w-full h-full">
