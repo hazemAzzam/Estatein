@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Urbanist } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/app/components/Navbar";
+import Footer from "@/app/components/Footer";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`relative ${urbanist.variable} bg-gray-08 antialiased min-h-screen`}
+        className={`relative ${urbanist.variable} flex flex-col gap-10 bg-gray-08 antialiased min-h-screen`}
       >
         <Navbar />
         {children}

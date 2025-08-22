@@ -54,7 +54,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className=" w-full bg-gray-08 text-gray-300">
+    <footer className="min-h-fit w-full bg-gray-08 text-gray-300">
       <div className="flex items-start gap-5 justify-around py-12 px-10">
         {/* Logo + Email input */}
         <div className="md:col-span-1 space-y-6">
