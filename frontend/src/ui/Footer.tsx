@@ -55,7 +55,7 @@ const footerLinks = [
 export default function Footer() {
   return (
     <footer className="min-h-fit w-full bg-gray-08 text-gray-300">
-      <div className="flex items-start gap-5 justify-around py-12 px-10">
+      <div className="flex items-start flex-wrap gap-5 justify-around py-12 px-10">
         {/* Logo + Email input */}
         <div className="md:col-span-1 space-y-6">
           <Image
@@ -103,7 +103,7 @@ export default function Footer() {
           ))}
         </div>
       </div>
-      <div className="bg-gray-10 flex gap-5 items-center justify-around w-full p-6">
+      <div className="bg-gray-10 flex gap-5 flex-wrap items-center justify-around w-full p-6">
         <div className="flex gap-5">
           <p>@2023 Estatein. All Rights Reserved.</p>
           <p>Terms & Conditions</p>

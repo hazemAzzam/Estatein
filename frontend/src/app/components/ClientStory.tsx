@@ -52,10 +52,10 @@ export default function ClientStory() {
 const ClientStoryCard = ({ story }: { story: ClientStoryType }) => {
   return (
     <div
-      className={`h-[360px]  border w-[385px] border-gray-20 rounded-md p-7`}
+      className={`max-h-[400px] h-fit  border max-w-[385px] border-gray-20 rounded-md p-7`}
     >
-      <div className="flex flex-col justify-around gap-2 h-full w-full">
-        <div className="flex gap-2">
+      <div className="flex flex-col justify-around gap-5 h-full w-full">
+        <div className="flex gap-2 ">
           {Array.from({ length: 5 }).map((_, i) => (
             <div
               key={i}
@@ -63,8 +63,9 @@ const ClientStoryCard = ({ story }: { story: ClientStoryType }) => {
             >
               <Star
                 key={i}
+                // size={20}
                 fill={i < story.stars ? "#FFE500" : "transparent"}
-                className="text-[#FFE500] stroke-[#FFE500]"
+                className="text-[#FFE500] stroke-[#FFE500] w-[20px] h-[20px] md:w-[25px] md:h-[25px]"
               />
             </div>
           ))}

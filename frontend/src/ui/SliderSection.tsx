@@ -18,7 +18,7 @@ export default function SliderSection({
   sliderItems,
 }: SliderSectionProps) {
   return (
-    <div className="w-full h-fit  flex items-center justify-center px-10 py-10">
+    <div className="w-full h-fit  flex items-center justify-center px-5 py-10">
       <div className="relative w-full max-w-[1400px] h-full bg-gray-08">
         <div className="w-full h-full flex flex-col items-start justify-center">
           <Image src="/assets/stars.svg" alt="" width={100} height={50} />

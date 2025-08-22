@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Top hero content */}
       <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] items-center w-full h-full">
         {/* Left text */}
-        <div className="flex flex-col order-2 md:order-1 gap-6 p-10 items-start px-20  max-w-4xl">
+        <div className="flex flex-col order-2 md:order-1 gap-6 p-10 items-start  max-w-4xl">
           <div>
             <h2 className="text-6xl font-bold leading-tight py-5">
               Discover Your Dream Property with Estatein
@@ -20,11 +20,11 @@ export default function Hero() {
           </div>
 
           {/* CTA buttons */}
-          <div className="flex gap-5">
-            <Link href="#" className="link">
+          <div className="flex gap-5 flex-wrap">
+            <Link href="#" className="link flex-grow">
               Learn More
             </Link>
-            <Link href="#" className="link-fill">
+            <Link href="#" className="link-fill flex-grow">
               Browse Properties
             </Link>
           </div>
