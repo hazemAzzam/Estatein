@@ -3,6 +3,7 @@ import Properties from "@/app/components/Properties";
 import Image from "next/image";
 import ClientStory from "./components/ClientStory";
 import QuestionsSection from "./components/QuestionsSection";
+import CTA from "./components/CTA";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Properties />
       <ClientStory />
       <QuestionsSection />
+      <CTA />
     </div>
   );
 }
