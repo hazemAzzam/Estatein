@@ -3,14 +3,15 @@ import { PropertyType } from "../types/PropertyTypes";
 import SliderSection from "@/ui/SliderSection";
 import Link from "next/link";
 import { BedDouble } from "lucide-react";
-import { Text } from "@/ui/Text";
+import { Text } from "@/ui/toolbox/Text";
 import Image from "next/image";
 
 const PROPERTIES: PropertyType[] = [
   {
     id: "1",
     title: "Seaside Serenity Villa",
-    description: "A stunning 4-bedroom, 3-bathroom villa in a peaceful suburban neighborhood",
+    description:
+      "A stunning 4-bedroom, 3-bathroom villa in a peaceful suburban neighborhood",
     keywords: ["4-Bedroom", "3-Bathroom", "Villa"],
     thubnail: "/assets/villa.png",
     price: 550000,
@@ -18,7 +19,8 @@ const PROPERTIES: PropertyType[] = [
   {
     id: "2",
     title: "Metropolitan Haven",
-    description: "A chic and fully-furnished 2-bedroom apartment with panoramic city views",
+    description:
+      "A chic and fully-furnished 2-bedroom apartment with panoramic city views",
     keywords: ["2-Bedroom", "2-Bathroom", "Villa"],
     thubnail: "/assets/villa-2.png",
     price: 550000,
@@ -26,7 +28,8 @@ const PROPERTIES: PropertyType[] = [
   {
     id: "3",
     title: "Rustic Retreat Cottage",
-    description: "An elegant 3-bedroom, 2.5-bathroom townhouse in a gated community",
+    description:
+      "An elegant 3-bedroom, 2.5-bathroom townhouse in a gated community",
     keywords: ["3-Bedroom", "3-Bathroom", "Villa"],
     thubnail: "/assets/villa-3.png",
     price: 550000,
@@ -34,7 +37,8 @@ const PROPERTIES: PropertyType[] = [
   {
     id: "4",
     title: "Rustic Retreat Cottage",
-    description: "An elegant 3-bedroom, 2.5-bathroom townhouse in a gated community",
+    description:
+      "An elegant 3-bedroom, 2.5-bathroom townhouse in a gated community",
     keywords: ["3-Bedroom", "3-Bathroom", "Villa"],
     thubnail: "/assets/villa-3.png",
     price: 550000,
@@ -42,7 +46,8 @@ const PROPERTIES: PropertyType[] = [
   {
     id: "4",
     title: "Rustic Retreat Cottage",
-    description: "An elegant 3-bedroom, 2.5-bathroom townhouse in a gated community",
+    description:
+      "An elegant 3-bedroom, 2.5-bathroom townhouse in a gated community",
     keywords: ["3-Bedroom", "3-Bathroom", "Villa"],
     thubnail: "/assets/villa-3.png",
     price: 550000,
@@ -74,7 +79,9 @@ type PropertyCardProps = {
 
 const PropertyCard = ({ property, className }: PropertyCardProps) => {
   return (
-    <div className={`h-[500px]  border max-w-[385px] border-gray-20 rounded-md p-5 ${className}`}>
+    <div
+      className={`h-[500px]  border max-w-[385px] border-gray-20 rounded-md p-5 ${className}`}
+    >
       <div className="flex flex-col gap-5 w-full h-full">
         <div className="relative w-full h-full">
           <Image src={property.thubnail} alt="" fill />
@@ -82,12 +89,19 @@ const PropertyCard = ({ property, className }: PropertyCardProps) => {
         <div className="relative w-full h-full flex flex-col gap-2 items-start justify-between">
           <div className="flex flex-col gap-1">
             <h3 className="text-xl">{property.title}</h3>
-            <Text text={property.description} lineClamp={2} className="text-gray-60 text-[14px]" />
+            <Text
+              text={property.description}
+              lineClamp={2}
+              className="text-gray-60 text-[14px]"
+            />
           </div>
           <div className="flex flex-wrap items-center gap-1">
             {property?.keywords.map((keyword, i) => {
               return (
-                <div key={i} className="bg-gray-15 rounded-full px-3 py-1 flex items-center gap-1">
+                <div
+                  key={i}
+                  className="bg-gray-15 rounded-full px-3 py-1 flex items-center gap-1"
+                >
                   <BedDouble size={19} /> <span>{keyword}</span>
                 </div>
               );
