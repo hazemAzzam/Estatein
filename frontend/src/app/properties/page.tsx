@@ -1,5 +1,5 @@
 import React from "react";
-import PropertiesHeaderSection from "./components/PropertiesHeaderSection";
+import PropertiesHeaderSection from "../../components/properties/PropertiesHeaderSection";
 
 export default function page() {
   return (

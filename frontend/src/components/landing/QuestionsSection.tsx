@@ -1,5 +1,5 @@
 import React from "react";
-import { AskedQuestionType } from "../types/AskedQuestionType";
+import { AskedQuestionType } from "../../types/AskedQuestionType";
 import SliderSection from "@/ui/SliderSection";
 import Link from "next/link";
 

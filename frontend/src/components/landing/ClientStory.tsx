@@ -1,5 +1,5 @@
 import React from "react";
-import { ClientStoryType } from "../types/ClientStoryTypes";
+import { ClientStoryType } from "../../types/ClientStoryTypes";
 import SliderSection from "@/ui/SliderSection";
 import { Star } from "lucide-react";
 import Image from "next/image";

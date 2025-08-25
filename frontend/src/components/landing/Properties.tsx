@@ -1,5 +1,5 @@
 import React from "react";
-import { PropertyType } from "../types/PropertyTypes";
+import { PropertyType } from "../../types/PropertyTypes";
 import SliderSection from "@/ui/SliderSection";
 import Link from "next/link";
 import { BedDouble } from "lucide-react";
