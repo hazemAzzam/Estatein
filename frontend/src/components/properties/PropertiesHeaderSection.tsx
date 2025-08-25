@@ -1,6 +1,9 @@
 // "use client";
 
 import SearchField from "@/ui/toolbox/SearchField";
+import Select from "@/ui/toolbox/Select/Select";
+import { MapPin } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 export default function PropertiesHeaderSection() {
@@ -41,6 +44,62 @@ export default function PropertiesHeaderSection() {
           className={`flex-grow w-full max-w-[1400px] min-h-[50px] flex flex-row flex-wrap bg-gray-10 p-2  gap-5 rounded-xl`}
         >
           {/* Filters */}
+          <Select
+            icon={
+              <Image
+                src={"/assets/map-pin.svg"}
+                alt=""
+                width={25}
+                height={25}
+              />
+            }
+            placeholder="Location"
+            className="flex-1"
+          />
+          <Select
+            icon={
+              <Image
+                src={"/assets/home-modern.svg"}
+                alt=""
+                width={25}
+                height={25}
+              />
+            }
+            placeholder="Property Type"
+            className="flex-1"
+          />
+          <Select
+            icon={
+              <Image
+                src={"/assets/banknotes.svg"}
+                alt=""
+                width={25}
+                height={25}
+              />
+            }
+            placeholder="Price Range"
+            className="flex-1"
+          />
+
+          <Select
+            icon={
+              <Image src={"/assets/cube.svg"} alt="" width={25} height={25} />
+            }
+            placeholder="Property Size"
+            className="flex-1"
+          />
+          <Select
+            icon={
+              <Image
+                src={"/assets/calendar.svg"}
+                alt=""
+                width={25}
+                height={25}
+              />
+            }
+            placeholder="Build Year"
+            className="flex-1"
+          />
         </div>
       </div>
     </div>
