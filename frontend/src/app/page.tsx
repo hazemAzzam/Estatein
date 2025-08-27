@@ -7,7 +7,7 @@ import CTA from "../components/landing/CTA";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="container">
       <Hero />
       <Properties />
       <ClientStory />

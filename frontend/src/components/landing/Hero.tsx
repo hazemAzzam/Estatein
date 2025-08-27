@@ -10,13 +10,8 @@ export default function Hero() {
         {/* Left text */}
         <div className="flex flex-col order-2 md:order-1 gap-6 p-10 items-start  max-w-4xl">
           <div>
-            <h2 className="text-6xl font-bold leading-tight py-5">
-              Discover Your Dream Property with Estatein
-            </h2>
-            <p className="text-gray-60">
-              Your journey to finding the perfect property begins here. Explore
-              our listings to find the home that matches your dreams.
-            </p>
+            <h2 className="text-6xl font-bold leading-tight py-5">Discover Your Dream Property with Estatein</h2>
+            <p className="text-gray-60">Your journey to finding the perfect property begins here. Explore our listings to find the home that matches your dreams.</p>
           </div>
 
           {/* CTA buttons */}
@@ -47,14 +42,8 @@ export default function Hero() {
         </div>
 
         {/* Right image */}
-        <div className="relative order-1 md:order-2 w-full h-[600px]">
-          <Image
-            src="/assets/Container.png"
-            alt="Property showcase"
-            fill
-            className="object-fill"
-            priority
-          />
+        <div className="relative order-1 md:order-2 w-full h-[600px] aspect-square">
+          <Image src="/assets/Container.png" alt="Property showcase" fill className="object-fill" priority />
         </div>
       </div>
 

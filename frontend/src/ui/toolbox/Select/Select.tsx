@@ -10,17 +10,12 @@ type Props = {
 
 export default function Select({ className, placeholder, icon }: Props) {
   return (
-    <div
-      className={`relative flex min-w-[250px] items-center flex-row border border-gray-15 bg-gray-08 rounded-md p-3 ${className}`}
-    >
+    <div className={`relative flex min-w-[150px] items-center flex-row border border-gray-15 bg-gray-08 rounded-md p-3 ${className}`}>
       <div className="flex flex-row gap-1 items-center">
         <div className="relative">{icon}</div>
         <Tally1 className="text-gray-15" />
       </div>
-      <select
-        className={`${style.select} w-full bg-transparent outline-none`}
-        defaultValue={""}
-      >
+      <select className={`${style.select} w-full bg-transparent outline-none`} defaultValue={""}>
         <option value="" disabled hidden>
           {placeholder || "Select an option"}
         </option>
