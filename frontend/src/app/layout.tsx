@@ -20,6 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body
         className={`relative ${urbanist.variable} flex flex-col bg-gray-08 antialiased min-h-screen`}
       >
