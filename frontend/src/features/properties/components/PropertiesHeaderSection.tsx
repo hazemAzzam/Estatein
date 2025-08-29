@@ -2,7 +2,6 @@
 
 import SearchField from "@/ui/toolbox/SearchField";
 import Select from "@/ui/toolbox/Select/Select";
-import { MapPin } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 

@@ -1,8 +1,9 @@
 import React from "react";
 import { ClientStoryType } from "../../types/ClientStoryTypes";
-import SliderSection from "@/ui/SliderSection";
+import Section from "@/ui/SliderSection";
 import { Star } from "lucide-react";
 import Image from "next/image";
+import { Slider } from "@/ui/toolbox/Slider";
 
 const STORIES: ClientStoryType[] = [
   {
@@ -37,14 +38,17 @@ const STORIES: ClientStoryType[] = [
 export default function ClientStory() {
   return (
     <>
-      <SliderSection
+      <Section
         title="What Our Clients Say"
         description={`Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs.`}
         action_name="View All Testimonials"
-        sliderItems={STORIES.map((story, i) => (
-          <ClientStoryCard story={story} key={i} />
-        ))}
-      />
+      >
+        <Slider
+          Items={STORIES.map((story, i) => (
+            <ClientStoryCard story={story} key={i} />
+          ))}
+        />
+      </Section>
     </>
   );
 }

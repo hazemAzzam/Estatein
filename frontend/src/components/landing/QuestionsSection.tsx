@@ -1,7 +1,8 @@
 import React from "react";
 import { AskedQuestionType } from "../../types/AskedQuestionType";
-import SliderSection from "@/ui/SliderSection";
+import Section from "@/ui/SliderSection";
 import Link from "next/link";
+import { Slider } from "@/ui/toolbox/Slider";
 
 const QUESTIONS: AskedQuestionType[] = [
   {
@@ -23,14 +24,17 @@ const QUESTIONS: AskedQuestionType[] = [
 
 export default function QuestionsSection() {
   return (
-    <SliderSection
+    <Section
       title="Frequently Asked Questions"
       description="Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way."
       action_name="View All FAQ’s"
-      sliderItems={QUESTIONS.map((question, i) => (
-        <QuestionCard question={question} key={i} />
-      ))}
-    />
+    >
+      <Slider
+        Items={QUESTIONS.map((question, i) => (
+          <QuestionCard question={question} key={i} />
+        ))}
+      />
+    </Section>
   );
 }
 
