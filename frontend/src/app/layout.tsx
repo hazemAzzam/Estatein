@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Urbanist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/ui/Navbar";
 import Footer from "@/ui/Footer";
+import CTA from "@/components/landing/CTA";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <CTA />
         <Footer />
       </body>
     </html>
