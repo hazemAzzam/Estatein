@@ -1,23 +1,48 @@
-import { Button } from "@/components/ui/button";
 import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Gallary from "@/features/properties/components/details/Gallery";
+import { PROPERTIES } from "@/features/properties/constants";
+import { getRandomImages } from "@/features/properties/utils";
 import Container from "@/ui/Container";
+import { AspectRatio } from "@radix-ui/react-aspect-ratio";
+import { MapPin } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 export default async function PropertyDetails(
   props: PageProps<"/properties/[id]">
 ) {
   const { id } = await props.params;
-
+  const property = PROPERTIES.find((property) => property.id === id);
+  const images = await getRandomImages(9);
   return (
     <Container>
-      <h1>Property Details for ID: {id}</h1>
+      <div className="flex flex-col gap-8 py-8">
+        {/* Header */}
+        <div className="flex flex-row items-center justify-between flex-wrap gap-5">
+          <div className="flex flex-row items-center gap-4 flex-wrap">
+            <h1 className="text-3xl font-bold">{property?.title}</h1>
+            <div className="flex flex-row items-center gap-1 border border-gray-20 p-2 rounded-lg">
+              <MapPin size={20} />
+              <h2 className="font-bold">{property?.location}</h2>
+            </div>
+          </div>
+
+          <div className="flex flex-col text-start">
+            <span className="text-gray-500">Price</span>
+            <span className="text-2xl font-semibold text-primary">
+              ${property?.price.toLocaleString()}
+            </span>
+          </div>
+        </div>
+
+        <Gallary images={images} />
+      </div>
     </Container>
   );
 }

@@ -4,5 +4,6 @@ export type PropertyType = {
   description: string;
   keywords: string[];
   thubnail: string;
+  location: string;
   price: number;
 };
