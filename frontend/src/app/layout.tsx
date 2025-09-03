@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/ui/Navbar";
 import Footer from "@/ui/Footer";
 import CTA from "@/components/landing/CTA";
+import { Toaster } from "sonner";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
@@ -28,8 +29,9 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`relative ${urbanist.variable} flex flex-col bg-gray-08 antialiased min-h-screen`}
+        className={`dark relative ${urbanist.variable} flex flex-col bg-gray-08 antialiased min-h-screen`}
       >
+        <Toaster />
         <Navbar />
         {children}
         <CTA />

@@ -12,7 +12,6 @@ export default function Home() {
       <Properties />
       <ClientStory />
       <QuestionsSection />
-      <CTA />
     </div>
   );
 }

@@ -50,7 +50,10 @@ export const PropertyCard = ({ property, className }: PropertyCardProps) => {
                 })}
               </span>
             </div>
-            <Link href="" className="link-fill text-nowrap text-center">
+            <Link
+              href={`/properties/${property.id}`}
+              className="link-fill text-nowrap text-center"
+            >
               View Property Details
             </Link>
           </div>
