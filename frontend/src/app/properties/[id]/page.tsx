@@ -1,4 +1,4 @@
-import Gallary from "@/features/properties/components/details/Gallery";
+import Gallery from "@/features/properties/components/details/Gallery";
 import { PROPERTIES } from "@/features/properties/constants";
 import { getRandomImages } from "@/features/properties/utils";
 import Container from "@/ui/Container";
@@ -23,22 +23,22 @@ export default async function PropertyDetails(
         {/* Header */}
         <div className="flex flex-row items-center justify-between flex-wrap gap-5">
           <div className="flex flex-row items-center gap-4 flex-wrap">
-            <h1 className="text-3xl font-bold">{property?.title}</h1>
+            <h1 className="text-3xl font-bold">{property.title}</h1>
             <div className="flex flex-row items-center gap-1 border border-gray-20 p-2 rounded-lg">
               <MapPin size={20} />
-              <h2 className="font-bold">{property?.location}</h2>
+              <h2 className="font-bold">{property.location}</h2>
             </div>
           </div>
 
           <div className="flex flex-col text-start">
             <span className="text-gray-500">Price</span>
             <span className="text-2xl font-semibold text-primary">
-              ${property?.price.toLocaleString()}
+              ${property.price.toLocaleString()}
             </span>
           </div>
         </div>
 
-        <Gallary images={images} />
+        <Gallery images={images} />
       </div>
     </Container>
   );

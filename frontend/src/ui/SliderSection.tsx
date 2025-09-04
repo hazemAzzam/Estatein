@@ -30,7 +30,7 @@ export default function Section({
               </div>
               {action_name && (
                 <div className="flex items-end">
-                  <Link href="" className="link text-nowrap">
+                  <Link href="/properties" className="link text-nowrap">
                     {action_name}
                   </Link>
                 </div>

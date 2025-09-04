@@ -9,7 +9,8 @@ export default function NotFound() {
         <div className="text-6xl font-bold text-gray-60">404</div>
         <h1 className="text-3xl font-bold">Property Not Found</h1>
         <p className="text-gray-60 max-w-md">
-          Sorry, the property you're looking for doesn't exist or has been removed.
+          Sorry, the property you&apos;re looking for doesn&apos;t exist or has
+          been removed.
         </p>
         <div className="flex gap-4 flex-wrap">
           <Link
@@ -31,5 +32,3 @@ export default function NotFound() {
     </Container>
   );
 }
-
-

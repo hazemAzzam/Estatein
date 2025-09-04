@@ -29,7 +29,7 @@ export default function Navbar() {
         <div className="flex justify-center">
           <div className="flex gap-2 items-center flex-wrap justify-center">
             <p>✨ Discover Your Dream Property with Estatein</p>
-            <Link href="#" className="text-white underline">
+            <Link href="/about" className="text-white underline">
               Learn More
             </Link>
           </div>
@@ -74,7 +74,7 @@ export default function Navbar() {
 
         <div>
           <Link
-            href=""
+            href="/contact"
             className="bg-gray-08 rounded-md p-[10px_20px] border border-gray-20"
           >
             Contact Us

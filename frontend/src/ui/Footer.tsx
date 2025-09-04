@@ -109,30 +109,38 @@ export default function Footer() {
           <p>Terms & Conditions</p>
         </div>
         <div className="flex gap-5">
-          <Link
-            href=""
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="p-2 bg-gray-08 rounded-full hover:text-blue-600"
           >
             <FaFacebookF className="text-inherit" />
-          </Link>
-          <Link
-            href=""
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="p-2 bg-gray-08 rounded-full hover:text-blue-300"
           >
             <LiaLinkedinIn />
-          </Link>
-          <Link
-            href=""
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="p-2 bg-gray-08 rounded-full hover:text-white"
           >
             <BsTwitterX />
-          </Link>
-          <Link
-            href=""
+          </a>
+          <a
+            href="https://youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="p-2 bg-gray-08 rounded-full hover:text-red-600"
           >
             <BsYoutube />
-          </Link>
+          </a>
         </div>
       </div>
     </footer>

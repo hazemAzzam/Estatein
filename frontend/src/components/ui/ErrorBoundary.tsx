@@ -1,6 +1,6 @@
 "use client";
-import { Component, ReactNode } from 'react';
-import { AlertTriangle, RefreshCw } from 'lucide-react';
+import { Component, ReactNode } from "react";
+import { AlertTriangle, RefreshCw } from "lucide-react";
 
 interface Props {
   children: ReactNode;
@@ -23,7 +23,7 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('ErrorBoundary caught an error:', error, errorInfo);
+    console.error("ErrorBoundary caught an error:", error, errorInfo);
   }
 
   render() {
@@ -38,8 +38,9 @@ export class ErrorBoundary extends Component<Props, State> {
             <AlertTriangle />
           </div>
           <h2 className="text-2xl font-bold">Something went wrong</h2>
-          <p className="text-gray-60 max-w-md">
-            We're sorry, but something unexpected happened. Please try refreshing the page.
+          <p className="text-gray-600 mb-4">
+            We&apos;re sorry, but something went wrong. Please try refreshing
+            the page.
           </p>
           <button
             onClick={() => {
@@ -51,7 +52,7 @@ export class ErrorBoundary extends Component<Props, State> {
             <RefreshCw size={20} />
             Refresh Page
           </button>
-          {process.env.NODE_ENV === 'development' && this.state.error && (
+          {process.env.NODE_ENV === "development" && this.state.error && (
             <details className="mt-4 text-left max-w-2xl">
               <summary className="cursor-pointer text-sm text-gray-60">
                 Error Details (Development)
@@ -68,5 +69,3 @@ export class ErrorBoundary extends Component<Props, State> {
     return this.props.children;
   }
 }
-
-

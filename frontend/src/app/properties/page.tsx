@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import PropertiesHeaderSection from "../../features/properties/components/PropertiesHeaderSection";
+import PropertiesHeaderSection from "@/features/properties/components/PropertiesHeaderSection";
 import Section from "@/ui/SliderSection";
 import { PropertyCard } from "@/features/properties/components/PropertyCard";
 import { PROPERTIES } from "@/features/properties/constants";
@@ -9,7 +9,7 @@ import { Slider } from "@/ui/toolbox/Slider";
 import Container from "@/ui/Container";
 import PropertyForm from "@/features/properties/components/PropertyForm";
 
-export default function page() {
+export default function PropertiesPage() {
   return (
     <div className="min-h-screen w-full">
       <div className="flex flex-col w-full h-full gap-25  justify-between">
@@ -21,7 +21,7 @@ export default function page() {
           >
             <Slider
               Items={PROPERTIES.map((item, i) => (
-                <PropertyCard property={item} key={i} />
+                <PropertyCard property={item} key={item.id} />
               ))}
             />
           </Section>

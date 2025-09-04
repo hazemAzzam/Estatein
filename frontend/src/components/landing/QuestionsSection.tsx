@@ -46,7 +46,7 @@ const QuestionCard = ({ question }: { question: AskedQuestionType }) => {
       <div className="w-full h-full flex flex-col justify-between items-start gap-2">
         <p>{question.title}</p>
         <p className="text-gray-60">{question.description}</p>
-        <Link href="" className="link-fill bg-gray-10! w-fit">
+        <Link href="/properties" className="link-fill bg-gray-10! w-fit">
           Read More
         </Link>
       </div>

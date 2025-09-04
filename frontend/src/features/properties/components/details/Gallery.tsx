@@ -10,17 +10,16 @@ import {
 } from "@/components/ui/carousel";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 import Image from "next/image";
-import React, { useState } from "react";
-import { getRandomImages } from "../../utils";
+import React from "react";
+
 import clsx from "clsx";
-import { BsDash } from "react-icons/bs";
-import { ArrowLeft, ArrowRight, Minus, MoveLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight, Minus } from "lucide-react";
 
 type GalleryProps = {
   images: string[];
 };
 
-export default function Gallary({ images }: GalleryProps) {
+export default function Gallery({ images }: GalleryProps) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);

@@ -3,14 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   typedRoutes: true,
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.dog.ceo",
-      },
-    ],
-  },
+  // Removed external API configuration - now using local images
 };
 
 export default nextConfig;
