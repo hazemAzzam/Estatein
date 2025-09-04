@@ -1,11 +1,56 @@
 // "use client";
 
+import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import SearchField from "@/ui/toolbox/SearchField";
-import Select from "@/ui/toolbox/Select/Select";
-import Image from "next/image";
+import SelectField from "@/ui/toolbox/SelectField";
+import {
+  Building2Icon,
+  CalendarIcon,
+  DollarSignIcon,
+  MapPinIcon,
+  SquareIcon,
+  XIcon,
+} from "lucide-react";
 import React from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+
+const searchFormSchema = z.object({
+  searchQuery: z.string().optional(),
+  location: z.string().optional(),
+  propertyType: z.string().optional(),
+  priceRange: z.string().optional(),
+  propertySize: z.string().optional(),
+  buildYear: z.string().optional(),
+});
+
+type SearchFormValues = z.infer<typeof searchFormSchema>;
 
 export default function PropertiesHeaderSection() {
+  const form = useForm<SearchFormValues>({
+    resolver: zodResolver(searchFormSchema),
+    defaultValues: {
+      searchQuery: "",
+      location: "",
+      propertyType: "",
+      priceRange: "",
+      propertySize: "",
+      buildYear: "",
+    },
+  });
+
+  const onSubmit = (data: SearchFormValues) => {
+    console.log("Search form submitted:", data);
+    toast.success("Search form submitted", {
+      description: `Query: ${data.searchQuery}, Location: ${data.location}, Property Type: ${data.propertyType}, Price Range: ${data.priceRange}, Property Size: ${data.propertySize}, Build Year: ${data.buildYear}`,
+    });
+    // router.push(`/properties?${new URLSearchParams(data).toString()}`);
+  };
+
   return (
     <div
       className=" 
@@ -30,77 +75,153 @@ export default function PropertiesHeaderSection() {
           </p>
         </div>
       </div>
-      <div className="relative container  px-5 md:-my-15!  flex flex-col gap-5 md:gap-0 items-center">
-        <div
-          className={`flex-grow  w-full max-w-[1200px] min-h-[50px] flex flex-row bg-gray-10 p-2  gap-2 rounded-xl md:rounded-t-xl md:rounded-b-none`}
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="relative container  px-5 md:-my-15!  flex flex-col gap-5 md:gap-0 items-center"
         >
-          <SearchField
-            className="w-full"
-            inputAttributes={{ placeholder: "Search For A Property" }}
-          />
-        </div>
-        <div
-          className={`flex-grow w-full max-w-[1400px] min-h-[50px] flex flex-row flex-wrap bg-gray-10 p-2  gap-5 rounded-xl`}
-        >
-          {/* Filters */}
-          <Select
-            icon={
-              <Image
-                src={"/assets/map-pin.svg"}
-                alt=""
-                width={25}
-                height={25}
-              />
-            }
-            placeholder="Location"
-            className="flex-1"
-          />
-          <Select
-            icon={
-              <Image
-                src={"/assets/home-modern.svg"}
-                alt=""
-                width={25}
-                height={25}
-              />
-            }
-            placeholder="Property Type"
-            className="flex-1"
-          />
-          <Select
-            icon={
-              <Image
-                src={"/assets/banknotes.svg"}
-                alt=""
-                width={25}
-                height={25}
-              />
-            }
-            placeholder="Price Range"
-            className="flex-1"
-          />
+          <div
+            className={`flex-grow  w-full max-w-[1200px] min-h-[50px] flex flex-row bg-gray-10 p-2  gap-2 rounded-xl md:rounded-t-xl md:rounded-b-none`}
+          >
+            <FormField
+              control={form.control}
+              name="searchQuery"
+              render={({ field }) => (
+                <FormItem className="w-full bg-gray-08 flex flex-row gap-2">
+                  <FormControl className="flex-1">
+                    <Input
+                      placeholder="Search For A Property"
+                      type="text"
+                      className="h-[50px]"
+                      {...field}
+                    />
+                  </FormControl>
+                  <Button type="submit" className="h-[50px]">
+                    Find Property
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="h-[50px]"
+                    onClick={() => form.reset()}
+                  >
+                    <XIcon className="size-4" />
+                  </Button>
+                </FormItem>
+              )}
+            />
+          </div>
+          <div
+            className={`flex-grow w-full max-w-[1400px] min-h-[50px] flex flex-row flex-wrap bg-gray-10 p-2  gap-5 rounded-xl`}
+          >
+            {/* Filters */}
+            <FormField
+              control={form.control}
+              name="location"
+              render={({ field }) => (
+                <FormItem className="flex-1">
+                  <FormControl>
+                    <SelectField
+                      icon={<MapPinIcon className="size-4" />}
+                      placeholder="Location"
+                      {...field}
+                      options={[
+                        { value: "cairo", label: "Cairo" },
+                        { value: "giza", label: "Giza" },
+                        { value: "alex", label: "Alexandria" },
+                      ]}
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
 
-          <Select
-            icon={
-              <Image src={"/assets/cube.svg"} alt="" width={25} height={25} />
-            }
-            placeholder="Property Size"
-            className="flex-1"
-          />
-          <Select
-            icon={
-              <Image
-                src={"/assets/calendar.svg"}
-                alt=""
-                width={25}
-                height={25}
-              />
-            }
-            placeholder="Build Year"
-            className="flex-1"
-          />
-        </div>
-      </div>
+            <FormField
+              control={form.control}
+              name="propertyType"
+              render={({ field }) => (
+                <FormItem className="flex-1">
+                  <FormControl>
+                    <SelectField
+                      icon={<Building2Icon className="size-4" />}
+                      placeholder="Property Type"
+                      {...field}
+                      options={[
+                        { value: "apartment", label: "Apartment" },
+                        { value: "villa", label: "Villa" },
+                        { value: "studio", label: "Studio" },
+                      ]}
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="propertySize"
+              render={({ field }) => (
+                <FormItem className="flex-1">
+                  <FormControl>
+                    <SelectField
+                      icon={<DollarSignIcon className="size-4" />}
+                      placeholder="Price Range"
+                      {...field}
+                      options={[
+                        { value: "100k", label: "$100k" },
+                        { value: "200k", label: "$200k" },
+                        { value: "500k", label: "$500k" },
+                      ]}
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="propertySize"
+              render={({ field }) => (
+                <FormItem className="flex-1">
+                  <FormControl>
+                    <SelectField
+                      icon={<SquareIcon className="size-4" />}
+                      placeholder="Property Size"
+                      className="flex-1"
+                      {...field}
+                      options={[
+                        { value: "small", label: "Small" },
+                        { value: "medium", label: "Medium" },
+                        { value: "large", label: "Large" },
+                      ]}
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="buildYear"
+              render={({ field }) => (
+                <FormItem className="flex-1">
+                  <FormControl>
+                    <SelectField
+                      icon={<CalendarIcon className="size-4" />}
+                      placeholder="Build Year"
+                      {...field}
+                      options={[
+                        { value: "2020", label: "2020" },
+                        { value: "2021", label: "2021" },
+                        { value: "2022", label: "2022" },
+                        { value: "2023", label: "2023" },
+                      ]}
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+          </div>
+        </form>
+      </Form>
     </div>
   );
 }

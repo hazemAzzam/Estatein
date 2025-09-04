@@ -1,17 +1,9 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import Gallary from "@/features/properties/components/details/Gallery";
 import { PROPERTIES } from "@/features/properties/constants";
 import { getRandomImages } from "@/features/properties/utils";
 import Container from "@/ui/Container";
-import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 import { MapPin } from "lucide-react";
-import Image from "next/image";
+import { notFound } from "next/navigation";
 import React from "react";
 
 export default async function PropertyDetails(
@@ -19,6 +11,11 @@ export default async function PropertyDetails(
 ) {
   const { id } = await props.params;
   const property = PROPERTIES.find((property) => property.id === id);
+
+  if (!property) {
+    notFound();
+  }
+
   const images = await getRandomImages(9);
   return (
     <Container>
