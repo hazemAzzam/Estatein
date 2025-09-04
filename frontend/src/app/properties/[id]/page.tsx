@@ -5,6 +5,8 @@ import Container from "@/components/ui/Container";
 import { MapPin } from "lucide-react";
 import { notFound } from "next/navigation";
 import React from "react";
+import PropertyDescriptionSection from "@/features/properties/components/details/PropertyDescriptionSection";
+import PropertyFeaturesSection from "@/features/properties/components/details/PropertyFeaturesSection";
 
 export default async function PropertyDetails(
   props: PageProps<"/properties/[id]">
@@ -39,6 +41,11 @@ export default async function PropertyDetails(
         </div>
 
         <Gallery images={images} />
+
+        <div className="flex flex-row gap-4 w-full flex-wrap ">
+          <PropertyDescriptionSection property={property} />
+          <PropertyFeaturesSection property={property} />
+        </div>
       </div>
     </Container>
   );
