@@ -5,7 +5,7 @@ import React from "react";
 
 export default function CTA() {
   return (
-    <div className="relative h-fit w-full px-[81px] py-[50px] flex items-center justify-center">
+    <div className="relative h-fit w-full  py-[50px] flex items-center justify-center">
       <div className="absolute w-full top-0 left-0 z-[-1] h-full flex flex-row ">
         <div className="relative w-full h-full flex flex-row justify-between">
           <div className="relative max-w-1/3 flex-1">
