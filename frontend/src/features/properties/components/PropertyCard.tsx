@@ -1,4 +1,4 @@
-import { Text } from "@/ui/toolbox/Text";
+import { Text } from "@/components/ui/Text";
 import { BedDouble } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

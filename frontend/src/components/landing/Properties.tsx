@@ -1,8 +1,8 @@
 import React from "react";
-import Section from "@/ui/SliderSection";
+import Section from "@/components/ui/SliderSection";
 import { PROPERTIES } from "@/features/properties/constants";
 import { PropertyCard } from "@/features/properties/components/PropertyCard";
-import { Slider } from "@/ui/toolbox/Slider";
+import { Slider } from "@/components/ui/Slider";
 
 export default function Properties() {
   return (

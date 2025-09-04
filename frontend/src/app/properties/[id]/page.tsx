@@ -1,7 +1,7 @@
 import Gallery from "@/features/properties/components/details/Gallery";
 import { PROPERTIES } from "@/features/properties/constants";
 import { getRandomImages } from "@/features/properties/utils";
-import Container from "@/ui/Container";
+import Container from "@/components/ui/Container";
 import { MapPin } from "lucide-react";
 import { notFound } from "next/navigation";
 import React from "react";

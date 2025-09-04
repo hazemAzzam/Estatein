@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Urbanist } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/ui/Navbar";
-import Footer from "@/ui/Footer";
+import Navbar from "@/components/ui/Navbar";
+import Footer from "@/components/ui/Footer";
 import CTA from "@/components/landing/CTA";
 import { Toaster } from "sonner";
 

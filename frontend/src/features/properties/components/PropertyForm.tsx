@@ -12,9 +12,9 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import Container from "@/ui/Container";
-import Section from "@/ui/SliderSection";
-import { Combobox } from "@/ui/toolbox/ComboBox";
+import Container from "@/components/ui/Container";
+import Section from "@/components/ui/SliderSection";
+import { Combobox } from "@/components/ui/ComboBox";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { useForm } from "react-hook-form";

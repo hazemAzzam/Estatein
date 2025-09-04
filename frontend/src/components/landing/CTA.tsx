@@ -1,4 +1,4 @@
-import Container from "@/ui/Container";
+import Container from "@/components/ui/Container";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

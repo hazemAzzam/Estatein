@@ -2,11 +2,11 @@
 
 import React from "react";
 import PropertiesHeaderSection from "@/features/properties/components/PropertiesHeaderSection";
-import Section from "@/ui/SliderSection";
+import Section from "@/components/ui/SliderSection";
 import { PropertyCard } from "@/features/properties/components/PropertyCard";
 import { PROPERTIES } from "@/features/properties/constants";
-import { Slider } from "@/ui/toolbox/Slider";
-import Container from "@/ui/Container";
+import { Slider } from "@/components/ui/Slider";
+import Container from "@/components/ui/Container";
 import PropertyForm from "@/features/properties/components/PropertyForm";
 
 export default function PropertiesPage() {

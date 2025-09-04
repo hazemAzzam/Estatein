@@ -1,4 +1,4 @@
-import Container from "@/ui/Container";
+import Container from "@/components/ui/Container";
 
 export default function Loading() {
   return (
@@ -29,5 +29,3 @@ export default function Loading() {
     </Container>
   );
 }
-
-

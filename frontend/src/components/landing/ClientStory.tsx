@@ -1,9 +1,9 @@
 import React from "react";
 import { ClientStoryType } from "../../types/ClientStoryTypes";
-import Section from "@/ui/SliderSection";
+import Section from "@/components/ui/SliderSection";
 import { Star } from "lucide-react";
 import Image from "next/image";
-import { Slider } from "@/ui/toolbox/Slider";
+import { Slider } from "@/components/ui/Slider";
 
 const STORIES: ClientStoryType[] = [
   {

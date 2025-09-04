@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Home, Search } from "lucide-react";
-import Container from "@/ui/Container";
+import Container from "@/components/ui/Container";
 
 export default function NotFound() {
   return (

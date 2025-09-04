@@ -1,8 +1,8 @@
 import React from "react";
 import { AskedQuestionType } from "../../types/AskedQuestionType";
-import Section from "@/ui/SliderSection";
+import Section from "@/components/ui/SliderSection";
 import Link from "next/link";
-import { Slider } from "@/ui/toolbox/Slider";
+import { Slider } from "@/components/ui/Slider";
 
 const QUESTIONS: AskedQuestionType[] = [
   {
