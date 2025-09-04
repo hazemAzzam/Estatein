@@ -30,9 +30,11 @@ interface ComboboxProps {
   options: Option[];
   placeholder?: string;
   emptyMessage?: string;
+  className?: string;
 }
 
 export function Combobox({
+  className,
   value,
   onChange,
   options,
@@ -44,12 +46,12 @@ export function Combobox({
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
+      <PopoverTrigger asChild className={className}>
         <Button
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full justify-between"
+          className={cn("justify-between", className)}
         >
           {selectedLabel || placeholder}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />

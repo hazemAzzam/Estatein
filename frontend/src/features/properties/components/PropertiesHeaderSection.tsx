@@ -81,14 +81,14 @@ export default function PropertiesHeaderSection() {
           className="relative container  px-5 md:-my-15!  flex flex-col gap-5 md:gap-0 items-center"
         >
           <div
-            className={`flex-grow  w-full max-w-[1200px] min-h-[50px] flex flex-row bg-gray-10 p-2  gap-2 rounded-xl md:rounded-t-xl md:rounded-b-none`}
+            className={`flex-grow flex-wrap w-full max-w-[1200px] min-h-[50px] flex flex-row bg-gray-10 p-2  gap-2 rounded-xl md:rounded-t-xl md:rounded-b-none`}
           >
             <FormField
               control={form.control}
               name="searchQuery"
               render={({ field }) => (
-                <FormItem className="w-full bg-gray-08 flex flex-row gap-2">
-                  <FormControl className="flex-1">
+                <FormItem className="min-w-[300px] flex-1">
+                  <FormControl className="w-full">
                     <Input
                       placeholder="Search For A Property"
                       type="text"
@@ -96,20 +96,22 @@ export default function PropertiesHeaderSection() {
                       {...field}
                     />
                   </FormControl>
-                  <Button type="submit" className="h-[50px]">
-                    Find Property
-                  </Button>
-                  <Button
-                    type="button"
-                    variant="outline"
-                    className="h-[50px]"
-                    onClick={() => form.reset()}
-                  >
-                    <XIcon className="size-4" />
-                  </Button>
                 </FormItem>
               )}
             />
+            <div className="flex flex-row gap-2 flex-shrink-0 ">
+              <Button type="submit" className="h-[50px] flex-1">
+                Find Property
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                className="h-[50px]"
+                onClick={() => form.reset()}
+              >
+                Clear
+              </Button>
+            </div>
           </div>
           <div
             className={`flex-grow w-full max-w-[1400px] min-h-[50px] flex flex-row flex-wrap bg-gray-10 p-2  gap-5 rounded-xl`}

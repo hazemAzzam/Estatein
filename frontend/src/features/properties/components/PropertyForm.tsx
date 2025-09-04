@@ -92,14 +92,14 @@ export default function PropertyForm() {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="flex flex-col gap-10 w-full border border-gray-15 rounded-md p-10"
+            className="flex flex-col gap-6 md:gap-10 w-full border border-gray-15 rounded-md p-4 sm:p-6 md:p-10"
           >
-            <div className="flex flex-row gap-10 flex-wrap w-full">
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 lg:gap-10 w-full">
               <FormField
                 control={form.control}
                 name="firstName"
                 render={({ field }) => (
-                  <FormItem className="flex-1">
+                  <FormItem className="flex-1 min-w-0">
                     <FormLabel>First Name</FormLabel>
                     <FormControl>
                       <Input placeholder="Enter First Name" {...field} />
@@ -113,7 +113,7 @@ export default function PropertyForm() {
                 control={form.control}
                 name="lastName"
                 render={({ field }) => (
-                  <FormItem className="flex-1">
+                  <FormItem className="flex-1 min-w-0">
                     <FormLabel>Last Name</FormLabel>
                     <FormControl>
                       <Input placeholder="Enter Last Name" {...field} />
@@ -127,7 +127,7 @@ export default function PropertyForm() {
                 control={form.control}
                 name="email"
                 render={({ field }) => (
-                  <FormItem className="flex-1">
+                  <FormItem className="flex-1 min-w-0">
                     <FormLabel>Email</FormLabel>
                     <FormControl>
                       <Input
@@ -145,7 +145,7 @@ export default function PropertyForm() {
                 control={form.control}
                 name="phone"
                 render={({ field }) => (
-                  <FormItem className="flex-1">
+                  <FormItem className="flex-1 min-w-0">
                     <FormLabel>Phone</FormLabel>
                     <FormControl>
                       <Input
@@ -160,12 +160,12 @@ export default function PropertyForm() {
               />
             </div>
 
-            <div className="flex flex-row gap-10 flex-wrap w-full">
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 lg:gap-10 w-full">
               <FormField
                 control={form.control}
                 name="preferredLocation"
                 render={({ field }) => (
-                  <FormItem className="flex-1">
+                  <FormItem className="flex-1 min-w-0">
                     <FormLabel>Preferred Location</FormLabel>
                     <FormControl>
                       <Combobox
@@ -173,6 +173,7 @@ export default function PropertyForm() {
                         onChange={field.onChange}
                         options={locationOptions}
                         placeholder="Choose a location"
+                        className="w-full min-w-0"
                       />
                     </FormControl>
                     <FormMessage />
@@ -184,7 +185,7 @@ export default function PropertyForm() {
                 control={form.control}
                 name="preferredType"
                 render={({ field }) => (
-                  <FormItem className="flex-1">
+                  <FormItem className="flex-1 min-w-0">
                     <FormLabel>Preferred Type</FormLabel>
                     <FormControl>
                       <Combobox
@@ -192,18 +193,21 @@ export default function PropertyForm() {
                         onChange={field.onChange}
                         options={typeOptions}
                         placeholder="Choose property type"
+                        className="w-full min-w-0"
                       />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
+            </div>
 
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 lg:gap-10 w-full">
               <FormField
                 control={form.control}
                 name="numberOfBathrooms"
                 render={({ field }) => (
-                  <FormItem className="flex-1">
+                  <FormItem className="flex-1 min-w-0">
                     <FormLabel>No. of Bathrooms</FormLabel>
                     <FormControl>
                       <Combobox
@@ -211,6 +215,7 @@ export default function PropertyForm() {
                         onChange={field.onChange}
                         options={numberOptions}
                         placeholder="Bathrooms"
+                        className="w-full min-w-0"
                       />
                     </FormControl>
                     <FormMessage />
@@ -222,7 +227,7 @@ export default function PropertyForm() {
                 control={form.control}
                 name="numberOfBedrooms"
                 render={({ field }) => (
-                  <FormItem className="flex-1">
+                  <FormItem className="flex-1 min-w-0">
                     <FormLabel>No. of Bedrooms</FormLabel>
                     <FormControl>
                       <Combobox
@@ -230,6 +235,7 @@ export default function PropertyForm() {
                         onChange={field.onChange}
                         options={numberOptions}
                         placeholder="Bedrooms"
+                        className="w-full min-w-0"
                       />
                     </FormControl>
                     <FormMessage />
@@ -241,7 +247,7 @@ export default function PropertyForm() {
                 control={form.control}
                 name="budget"
                 render={({ field }) => (
-                  <FormItem className="w-full">
+                  <FormItem className="flex-1 min-w-0">
                     <FormLabel>Budget</FormLabel>
                     <FormControl>
                       <Combobox
@@ -249,6 +255,7 @@ export default function PropertyForm() {
                         onChange={field.onChange}
                         options={budgetOptions}
                         placeholder="Select budget"
+                        className="w-full min-w-0"
                       />
                     </FormControl>
                     <FormMessage />
@@ -264,26 +271,30 @@ export default function PropertyForm() {
                 <FormItem className="w-full">
                   <FormLabel>Message</FormLabel>
                   <FormControl>
-                    <Textarea />
+                    <Textarea
+                      placeholder="Enter your message here..."
+                      className="min-h-[120px]"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
 
-            <div className="flex flex-row flex-wrap gap-10 w-full justify-between p-2">
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 lg:gap-10 w-full justify-between p-2">
               <FormField
                 control={form.control}
                 name="terms"
                 render={({ field }) => (
-                  <FormItem className="flex flex-row items-center space-x-2 space-y-0">
+                  <FormItem className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2">
                     <FormControl>
                       <Checkbox
                         checked={field.value}
                         onCheckedChange={field.onChange}
                       />
                     </FormControl>
-                    <FormLabel className="text-pretty flex-1 max-w-full">
+                    <FormLabel className="text-pretty flex-1 max-w-full text-sm sm:text-base">
                       I agree with Terms of Use and Privacy Policy
                     </FormLabel>
                     <FormMessage />
@@ -293,7 +304,7 @@ export default function PropertyForm() {
 
               <Button
                 type="submit"
-                className="bg-purple-60 hover:bg-purple-65 text-white"
+                className="bg-purple-60 hover:bg-purple-65 text-white w-full sm:w-auto"
               >
                 Send Your Message
               </Button>
