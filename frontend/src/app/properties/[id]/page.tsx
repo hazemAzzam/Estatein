@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import React from "react";
 import PropertyDescriptionSection from "@/features/properties/components/details/PropertyDescriptionSection";
 import PropertyFeaturesSection from "@/features/properties/components/details/PropertyFeaturesSection";
+import PropertyInquireSection from "@/features/properties/components/details/PropertyInquireSection";
 
 export default async function PropertyDetails(
   props: PageProps<"/properties/[id]">
@@ -46,6 +47,8 @@ export default async function PropertyDetails(
           <PropertyDescriptionSection property={property} />
           <PropertyFeaturesSection property={property} />
         </div>
+
+        <PropertyInquireSection property={property} />
       </div>
     </Container>
   );

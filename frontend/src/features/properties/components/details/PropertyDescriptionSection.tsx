@@ -27,7 +27,7 @@ export default function PropertyDescriptionSection({
   };
 
   return (
-    <div className="flex flex-row gap-4 flex-1 min-w-[400px] h-fit">
+    <div className="flex flex-row gap-4 flex-1 w-[400px] h-fit">
       <div className="flex flex-col gap-2 border border-gray-20 rounded-lg p-5">
         <div className="flex flex-col gap-2 border-b border-gray-20 pb-5">
           <h2 className="text-2xl font-bold">Description</h2>

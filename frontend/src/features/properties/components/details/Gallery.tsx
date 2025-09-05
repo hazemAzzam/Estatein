@@ -5,9 +5,8 @@ import {
   CarouselApi,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
+
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 import Image from "next/image";
 import React from "react";
@@ -70,32 +69,25 @@ export default function Gallery({ images }: GalleryProps) {
                 ratio={20 / 10}
                 className="rounded-lg overflow-hidden"
               >
-                <Image
-                  src={img}
-                  alt={`Property image ${idx + 1}`}
-                  fill
-                  className="object-fill"
-                />
+                <Image src={img} alt={`Property image ${idx + 1}`} fill />
               </AspectRatio>
             </CarouselItem>
           ))}
         </CarouselContent>
-        {/* <CarouselPrevious className="absolute bottom-0" />
-        <CarouselNext /> */}
       </Carousel>
 
       <div className="flex flex-row items-center text-muted-foreground text-center bg-gray-08 w-fit rounded-full p-2">
         <button
           className={clsx(
             "p-2 border border-gray-20 rounded-full ",
-            api?.canScrollPrev()
-              ? "cursor-pointer hover:text-primary"
-              : "opacity-50 cursor-not-allowed"
+            "opacity-50 cursor-not-allowed",
+            api?.canScrollNext() && "cursor-pointer hover:text-primary"
           )}
           onClick={() => api?.scrollTo(api.selectedScrollSnap() - 1)}
         >
           <ArrowLeft />
         </button>
+
         {Array.from({ length: count }, (_, i) => i + 1).map((num) => (
           <Minus
             key={num}
@@ -106,12 +98,12 @@ export default function Gallery({ images }: GalleryProps) {
             onClick={() => api?.scrollTo(num - 1)}
           />
         ))}
+
         <button
           className={clsx(
             "p-2 border border-gray-20 rounded-full ",
-            api?.canScrollNext()
-              ? "cursor-pointer hover:text-primary"
-              : "opacity-50 cursor-not-allowed"
+            "opacity-50 cursor-not-allowed",
+            api?.canScrollNext() && "cursor-pointer hover:text-primary"
           )}
           onClick={() => api?.scrollTo(api.selectedScrollSnap() + 1)}
         >
