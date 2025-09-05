@@ -45,7 +45,7 @@ export default function PropertyInquireSection({
       lastName: "",
       email: "",
       phone: "",
-      selectedProperty: property.title,
+      selectedProperty: `${property.title}, ${property.location}`,
       message: "",
       terms: false,
     },
@@ -81,6 +81,7 @@ export default function PropertyInquireSection({
                       className="h-[50px] min-w-[200px]"
                     />
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -98,6 +99,7 @@ export default function PropertyInquireSection({
                       className="h-[50px] min-w-[200px]"
                     />
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -117,6 +119,7 @@ export default function PropertyInquireSection({
                       className="h-[50px] min-w-[200px]"
                     />
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -134,6 +137,7 @@ export default function PropertyInquireSection({
                       className="h-[50px] min-w-[200px]"
                     />
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -156,6 +160,7 @@ export default function PropertyInquireSection({
                       <MapPinIcon className="absolute right-2" />
                     </div>
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -174,6 +179,7 @@ export default function PropertyInquireSection({
                       className="h-[120px] min-w-[200px]"
                     />
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />
