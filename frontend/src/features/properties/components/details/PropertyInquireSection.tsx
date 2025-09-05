@@ -19,6 +19,7 @@ import { toast } from "sonner";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
+import { LocationEditIcon, MapPinIcon } from "lucide-react";
 
 const FormSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -44,7 +45,7 @@ export default function PropertyInquireSection({
       lastName: "",
       email: "",
       phone: "",
-      selectedProperty: property.id,
+      selectedProperty: property.title,
       message: "",
       terms: false,
     },
@@ -132,6 +133,28 @@ export default function PropertyInquireSection({
                       type="tel"
                       className="h-[50px] min-w-[200px]"
                     />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className="flex flex-row gap-4 w-full flex-wrap">
+            <FormField
+              control={form.control}
+              name="selectedProperty"
+              render={({ field }) => (
+                <FormItem className="flex-1">
+                  <FormLabel>Selected Property</FormLabel>
+                  <FormControl>
+                    <div className="relative flex flex-row items-center gap-2">
+                      <Input
+                        {...field}
+                        placeholder="Enter Selected Property"
+                        type="text"
+                        className="h-[50px] min-w-[200px]"
+                      />
+                      <MapPinIcon className="absolute right-2" />
+                    </div>
                   </FormControl>
                 </FormItem>
               )}
